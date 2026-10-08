@@ -35,7 +35,8 @@
 * **`translations/zh-Hans.json`**：永久维护的主字典（包含 `canonical` 基础词条与 `exact` 严格匹配词条，具备大小写折叠与快捷键/标点派生识别）。
 * **`core/acorn_tool.py`**：轻量级、确定性 Python 核心引擎（零第三方依赖，纯 macOS 原生工具驱动）。
 * **`SKILL.md`**：已注册至 `~/.agents/skills/acorn-zh`，支持在终端通过 AI Agent 全托管调用。
-* **`legacy/`**：归档的历史单文件 Shell 菜单生成器与旧发布文件（如需分发给无 Python 环境的小白用户可查阅）。
+* **`docs/TRANSLATION_PLAN.md`**：模块翻译规范、术语对照表及新版本适配验收指南。
+* **`tests/test_core_tool.py`**：全流程沙箱集成与安全性测试套件。
 
 ---
 
