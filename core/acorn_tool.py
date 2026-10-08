@@ -9,7 +9,6 @@ import argparse
 import datetime
 import hashlib
 import json
-import os
 from pathlib import Path
 import plistlib
 import re
@@ -169,11 +168,10 @@ def get_status(app_path):
     resources = app / 'Contents/Resources'
     backup_dir = resources / BACKUP_DIR_NAME
     manifest_file = resources / MANIFEST_NAME
-    legacy_marker = resources / 'acorn-zh-hans-shell.plist'
     zh_dir = resources / 'zh-Hans.lproj'
 
     has_backup = backup_dir.is_dir() and (backup_dir / 'Acorn.bak').exists()
-    has_manifest = manifest_file.exists() or legacy_marker.exists()
+    has_manifest = manifest_file.exists()
     has_zh = zh_dir.is_dir() and (zh_dir / 'Localizable.strings').exists()
 
     if has_backup and has_zh:
@@ -368,7 +366,6 @@ def restore_app(app_path):
     resources = app / 'Contents/Resources'
     backup_dir = resources / BACKUP_DIR_NAME
     manifest_file = resources / MANIFEST_NAME
-    legacy_marker = resources / 'acorn-zh-hans-shell.plist'
     zh_dir = resources / 'zh-Hans.lproj'
 
     if not backup_dir.is_dir():
@@ -391,8 +388,6 @@ def restore_app(app_path):
         shutil.rmtree(zh_dir)
     if manifest_file.exists():
         manifest_file.unlink()
-    if legacy_marker.exists():
-        legacy_marker.unlink()
     shutil.rmtree(backup_dir)
 
     # Verify original signature

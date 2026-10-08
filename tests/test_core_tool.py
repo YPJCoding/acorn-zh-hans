@@ -4,7 +4,6 @@ Unit and integration test for core/acorn_tool.py using a staged temporary App co
 Verifies safety, backup integrity, exact signature, and 100% clean restoration.
 """
 
-import os
 from pathlib import Path
 import sys
 ROOT_DIR = Path(__file__).resolve().parent.parent
