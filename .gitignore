@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Staging & Temporary App backups
+.acorn-zh-hans-*
+*.backup-*.app
+/tmp/
+
+# IDE / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
